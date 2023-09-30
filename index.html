@@ -8,33 +8,78 @@
     <body>
         <a-scene>
             <a-assets>
-                <img id="sky" src="/Pictures/RainyBG.jpeg">
+                <img id="sky" src="/Pictures/BG.jpg">
+                <img id="plane" src="/Pictures/Black.jpg">
+                <img id="pinksign" src="Pictures/PinkSign.jpg">
+                <img id="build1" src="Pictures/build1.jpg">
+                <img id="build2" src="Pictures/build2.png">
+                <img id="build3" src="Pictures/build3.jpg">
+                <img id="build4" src="Pictures/build4.jpg">
+                <img id="build5" src="Pictures/build5.jpg">
+                <img id="build6" src="Pictures/build6.jpg">
+            
+                
+                <a-asset-items id="car1" src="assets/Heuer_FS2_coloured.gltf"></a-asset-items>
+                <a-asset-items id="car2" src="assets/Heuer_FS1_coloured.gltf"></a-asset-items>
+                <a-asset-items id="car3" src="assets/Heuer_FS3_coloured.gltf"></a-asset-items>
+                <a-asset-items id="person" src="assets/Fbx.rar"></a-asset-items>
+                
             </a-assets>
             
-            <a-camera position="0 0 10" user-height="0"></a-camera>
+            <a-camera position="4.5 0.27 0" rotation="0 90 0" user-height="0"></a-camera>
             
             <a-sky src="#sky"></a-sky>
             
-            <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" src="/CM2700_Aframe/Pictures/damnation.jpg" ></a-plane>
+            <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" src="#plane"></a-plane>
+            
+            <a-light type="spot" color="teal" intensity="1" angle="180"></a-light>
+            <a-light type="ambient" color="gray" intensity="1"></a-light>
+            <a-light type="point" color="magenta" intensity="0.5" position="0 3 -1.553"></a-light>
+            
+            <a-entity position="0 0 0" particle-system="preset: rain; maxAge: 50;"></a-entity>
+            <a-entity position="0 0 0" particle-system="preset: rain; maxAge: 50;"></a-entity>
+            <a-entity position="0 0 0" particle-system="preset: rain; maxAge: 50;"></a-entity>
+            
+            <a-box id="build1" position="-4.2 3 0.07" rotation="0 90 0" height="7" src="#build6"></a-box>
+            <a-box id="build2" position="-2.82 3 -1.811" rotation="0 90 0" height="7" src="#build2"></a-box>
+            <a-box id="build3" position="1 3 2.34" rotation="0 90 0" height="9" src="#build1"></a-box>
+            <a-box id="build4" position="2.5 4.5 2.285" rotation="0 90 0" height="10" src="#build2"></a-box>
+            <a-box id="build5" position="-0.725 3 2.716" rotation="0 90 0" height="7" src="#build3"></a-box>
+            <a-box id="build6"position="-1.112 4 -2.5" rotation="0 90 0" height="8" src="#build4"></a-box>
+            <a-box id="build7"position="3.217 2 -3.24" rotation="0 90 0" height="8" src="#build5"></a-box>
+            <a-box id="build8"position="0.211 3 -3.034" rotation="0 90 0" height="8" src="#build6"></a-box>
+            <a-box id="build9"position="-2.739 3 0.859" rotation="0 90 0" height="7" src="#build1"></a-box>
+            <a-box id="build10"position="-3.943 3.295 2.016" rotation="0 90 0" height="10" src="#build5"></a-box>
+            <a-box id="build11"position="-3.983 4 -1.131" rotation="0 90 0" height="8" src="#build3"></a-box>
+            <a-box id="build12"position="-1.984 3 1.908" rotation="0 90 0" height="6" src="#build4"></a-box>
+            <a-box id="build13"position="3.7 2.577 2.978" rotation="0 90 0" height="9" src="#build1"></a-box>
+            <a-box id="build14"position="4.695 1.483 2.394" rotation="0 90 0" height="8" src="#build5"></a-box>
+            <a-box id="build15"position="1.595 3.62 -3.205" rotation="0 90 0" height="8" src="#build3"></a-box>
+            <a-box id="build16"position="4.362 2.397 -3.750" rotation="0 90 0" height="6" src="#build4"></a-box>
+            
+            <a-box id="neonsign" width="0.25" position="-0.091 3.2 -2.209" rotation="0 90 0" height="2" src="#pinksign"></a-box>
             
             
-            <a-entity light="type: ambient; color: #CCC; intensity: 10"></a-entity>
+            <a-entity
+                gltf-model="#car3"
+                position="-2 0 1" 
+                scale="0.002 0.002 0.002" 
+                rotation="0 90 0" 
+                animation="property: position; to: 4.5 0 1; dur: 5000; loop: true; dir: alternate">
+            </a-entity>
             
-            <a-light type="point" color="magenta" position="0 5 0"></a-light>
+            <a-entity  
+                gltf-model="#car2"
+                position="4.5 0 -1" 
+                scale=".002 .002 .002" 
+                rotation="0 90 0" 
+                animation="property: position; to: -3 0 -1; dur: 5000; loop: true; dir: alternate">
+            </a-entity>
             
-            
-            <a-box position="-2 3 -2.5" rotation="0 90 0" height="7" src="/pictures/building1.jpeg"></a-box>
-            <a-box position="-0.5 3 -2.5" rotation="0 90 0" height="6" src="/pictures/building2.jpeg"></a-box>
-            <a-box position="1 3 2.5" rotation="0 90 0" height="9" src="/pictures/building3.jpeg"></a-box>
-            <a-box position="2.5 4.5 2.5" rotation="0 90 0" height="10" src="/pictures/building2.jpeg"></a-box>
-            <a-box position="4 3.5 2.5" rotation="0 90 0" height="7" src="/pictures/building1.jpeg"></a-box>
-            <a-box position="4 4 -2.5" rotation="0 90 0" height="8" src="/pictures/building3.jpeg"></a-box>
-            <a-box position="2.5 2 -2.5" rotation="0 90 0" height="5" src="/pictures/building6.jpeg"></a-box>
-            <a-box position="1 3 -2.5" rotation="0 90 0" height="8" src="/pictures/building4.jpeg"></a-box>
-            <a-box position="-2 3 2.5" rotation="0 90 0" height="7" src="/pictures/building6.jpeg"></a-box>
-            <a-box position="-0.5 3 2.5" rotation="0 90 0" height="6" src="/pictures/building4.jpeg"></a-box>
-            <a-box position="-3.5 4 -2.5" rotation="0 90 0" height="8" src="/pictures/building3.jpeg"></a-box>
-            <a-box position="-3.5 3 2.5" rotation="0 90 0" height="6" src="/pictures/building1.jpeg"></a-box>
+            <a-entity
+                rar-model="#person"
+                position="4 1 0"
+            ></a-entity>
             
         
         </a-scene>
